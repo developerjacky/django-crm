@@ -1,0 +1,70 @@
+<h1>People Detail 
+     <a href="/" >Main</a>
+     <a href="/index" >List</a>
+     <a href="admin" target="_blank">Admin</a>
+</h1>
+<hr>
+<h3>Name:    {{data.name}}</h3>
+<h3>Phone:   {{data.phone}}</h3>
+<h3>Address: {{data.address}} </h3>
+
+<a href="{% url 'edit_people' data.id %}">Edit</a>
+<a href="{% url 'delete_people' data.id %}">Delete</a>
+
+<br><br><br><br><br><br><br><hr size="3"><br>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+    <tr>
+        <th style="background-color: #f2f2f2; padding: 10px; text-align: left;">Field</th>
+        <th style="background-color: #f2f2f2; padding: 10px; text-align: left;">Value</th>
+    </tr>
+    <tr>
+        <td style="padding: 10px; font-weight: bold;">Name:</td>
+        <td style="padding: 10px;">{{ data.name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; font-weight: bold;">Phone:</td>
+        <td style="padding: 10px;">{{ data.phone }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; font-weight: bold;">Address:</td>
+        <td style="padding: 10px;">{{ data.address }}</td>
+    </tr>
+</table>
+
+<div style="margin-top: 20px;">
+    <a href="{% url 'edit_people' data.id %}" style="text-decoration: none; padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; margin-right: 10px;">Edit</a>
+    <a href="{% url 'delete_people' data.id %}" style="text-decoration: none; padding: 8px 16px; background-color: #dc3545; color: white; border-radius: 4px;">Delete</a>
+</div>
+
+
+
+
+
+
+<br><br><br><br><br><br><br><hr size="3"><br>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 400px;">
+    <tr>
+        <td style="background-color: #f2f2f2; font-weight: bold;">Name:</td>
+        <td>{{ data.name }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f2f2f2; font-weight: bold;">Phone:</td>
+        <td>{{ data.phone }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f2f2f2; font-weight: bold;">Address:</td>
+        <td>{{ data.address }}</td>
+    </tr>
+</table>
+
+<div style="margin-top: 20px;">
+    <a href="{% url 'edit_people' data.id %}" style="text-decoration: none; padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; margin-right: 10px;">Edit</a>
+    <a href="{% url 'delete_people' data.id %}" style="text-decoration: none; padding: 8px 16px; background-color: #dc3545; color: white; border-radius: 4px;">Delete</a>
+</div>
+
+
+
+<br><br><br><br><br><br><br><hr size="3"><br><br><br><br><br><br><br>
+

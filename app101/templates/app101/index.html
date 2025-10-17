@@ -1,0 +1,110 @@
+
+<h1>
+     Sales Department(app101) 
+     <a href="/" >Main</a>
+     <a href="/add" >Add</a>
+     <a href="admin" target="_blank">Admin</a>
+
+</h1>
+
+<hr>
+<h2>People/Customer/Employee List</h2>
+
+
+{% for x in data %}
+     <h3>{{ x.name }} - {{ x.phone }} - {{ x.address }}
+
+          <a href="{% url 'detail' x.id %}">Detail</a>
+          <a href="{% url 'edit_people' x.id %}">Edit</a>
+          <a href="{% url 'delete_people' x.id %}">Delete</a>
+     </h3> 
+{% endfor %}
+ 
+ <br><hr size="5">
+style 1 
+<br>
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+        <th style="padding: 8px; text-align: left;">Name</th>
+        <th style="padding: 8px; text-align: left;">Phone</th>
+        <th style="padding: 8px; text-align: left;">Address</th>
+        <th style="padding: 8px; text-align: left;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in data %}
+        <tr>
+            <td><strong>{{ x.name }}</strong></td>
+            <td>{{ x.phone }}</td>
+            <td>{{ x.address }}</td>
+            <td>
+                <a href="{% url 'detail' x.id %}" style="margin-right: 10px;">Detail</a>
+                <a href="{% url 'edit_people' x.id %}" style="margin-right: 10px;">Edit</a>
+                <a href="{% url 'delete_people' x.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<br><br><br><br><hr size="5">
+style 2 
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <tr style="background-color: #e9ecef;">
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    {% for x in data %}
+    <tr style="background-color: {% cycle '#ffffff' '#f8f9fa' %};">
+        <td>{{ x.name }}</td>
+        <td>{{ x.phone }}</td>
+        <td>{{ x.address }}</td>
+        <td>
+            <a href="{% url 'detail' x.id %}">Detail</a> &nbsp;
+            <a href="{% url 'edit_people' x.id %}">Edit</a> &nbsp;
+            <a href="{% url 'delete_people' x.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+ 
+
+
+<br><br><br><br><hr size="5">
+style 3 
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <tr style="background-color: pink;">
+        <th style="padding: 8px; text-align: left;">Name</th>
+        <th style="padding: 8px; text-align: left;">Phone</th>
+        <th style="padding: 8px; text-align: left;">Address</th>
+        <th style="padding: 8px; text-align: left;">Actions</th>
+    </tr>
+    {% for x in data %}
+    <tr style="background-color: {% cycle '#ffffff' 'LavenderBlush' %};">
+        <td>{{ x.name }}</td>
+        <td>{{ x.phone }}</td>
+        <td>{{ x.address }}</td>
+        <td>
+            <a href="{% url 'detail' x.id %}">Detail</a> &nbsp;
+            <a href="{% url 'edit_people' x.id %}">Edit</a> &nbsp;
+            <a href="{% url 'delete_people' x.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br><br><hr size="5">
+
+
+
+
+
+
+
+
+
